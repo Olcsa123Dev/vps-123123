@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Blueprint URL
-URL="https://github.com/NotJishnuisback/Free123/raw/refs/heads/main/resourcemanager.blueprint"
+URL="https://github.com/NotJishnuisback/Free123/raw/refs/heads/main/subdomains.blueprint"
 
 # Célmappa
 TARGET_DIR="/var/www/pterodactyl"
@@ -16,9 +16,9 @@ echo "📁 Belépés: $TARGET_DIR"
 cd "$TARGET_DIR"
 
 echo "⬇️ Blueprint letöltése..."
-curl -L -o resourcemanager.blueprint "$URL"
+curl -L -o subdomains.blueprint "$URL"
 
 echo "⚙️ Telepítés..."
-blueprint -i resourcemanager.blueprint
+blueprint -i subdomains.blueprint
 
 echo "✅ Kész!"
