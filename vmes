@@ -191,24 +191,24 @@ create_new_vm() {
     done
 
     while true; do
-        read -p "$(print_status "INPUT" "Enter hostname (default: $VM_NAME): ")" HOSTNAME
-        HOSTNAME="${HOSTNAME:-$VM_NAME}"
+        read -p "$(print_status "INPUT" "Enter hostname (default: root): ")" HOSTNAME
+        HOSTNAME="${HOSTNAME:-root}"
         if validate_input "name" "$HOSTNAME"; then
             break
         fi
     done
 
     while true; do
-        read -p "$(print_status "INPUT" "Enter username (default: $DEFAULT_USERNAME): ")" USERNAME
-        USERNAME="${USERNAME:-$DEFAULT_USERNAME}"
+        read -p "$(print_status "INPUT" "Enter username (default: root): ")" USERNAME
+        USERNAME="${USERNAME:-root}"
         if validate_input "username" "$USERNAME"; then
             break
         fi
     done
 
     while true; do
-        read -s -p "$(print_status "INPUT" "Enter password (default: $DEFAULT_PASSWORD): ")" PASSWORD
-        PASSWORD="${PASSWORD:-$DEFAULT_PASSWORD}"
+        read -s -p "$(print_status "INPUT" "Enter password (default: root): ")" PASSWORD
+        PASSWORD="${PASSWORD:-root}"
         echo
         if [ -n "$PASSWORD" ]; then
             break
@@ -218,24 +218,24 @@ create_new_vm() {
     done
 
     while true; do
-        read -p "$(print_status "INPUT" "Disk size (default: 20G): ")" DISK_SIZE
-        DISK_SIZE="${DISK_SIZE:-20G}"
+        read -p "$(print_status "INPUT" "Disk size (default: 50G): ")" DISK_SIZE
+        DISK_SIZE="${DISK_SIZE:-50G}"
         if validate_input "size" "$DISK_SIZE"; then
             break
         fi
     done
 
     while true; do
-        read -p "$(print_status "INPUT" "Memory in MB (default: 2048): ")" MEMORY
-        MEMORY="${MEMORY:-2048}"
+        read -p "$(print_status "INPUT" "Memory in MB (default: 131072MB = 128GB): ")" MEMORY
+        MEMORY="${MEMORY:-131072}"
         if validate_input "number" "$MEMORY"; then
             break
         fi
     done
 
     while true; do
-        read -p "$(print_status "INPUT" "Number of CPUs (default: 2): ")" CPUS
-        CPUS="${CPUS:-2}"
+        read -p "$(print_status "INPUT" "Number of CPUs (default: 32): ")" CPUS
+        CPUS="${CPUS:-32}"
         if validate_input "number" "$CPUS"; then
             break
         fi
