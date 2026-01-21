@@ -178,8 +178,8 @@ create_new_vm() {
 
     # Custom Inputs with validation
     while true; do
-        read -p "$(print_status "INPUT" "Enter VM name (default: $DEFAULT_HOSTNAME): ")" VM_NAME
-        VM_NAME="${VM_NAME:-$DEFAULT_HOSTNAME}"
+        read -p "$(print_status "INPUT" "Enter VM name (default: vps): ")" VM_NAME
+        VM_NAME="${VM_NAME:-vps}"
         if validate_input "name" "$VM_NAME"; then
             # Check if VM name already exists
             if [[ -f "$VM_DIR/$VM_NAME.conf" ]]; then
