@@ -1,0 +1,11 @@
+sudo apt update
+sudo apt install -y cmake pkg-config xxd libpci-dev libvulkan-dev libwayland-dev libx11-dev git build-essential && \
+mkdir -p ~/fastfetch-build && cd ~/fastfetch-build && \
+git clone https://github.com/fastfetch-cli/fastfetch.git . && \
+mkdir -p build && cd build && \
+cmake .. && \
+cmake --build . --target fastfetch --target flashfetch && \
+sudo install fastfetch /usr/local/bin/fastfetch && \
+sudo install flashfetch /usr/local/bin/flashfetch && \
+cd ~ && rm -rf ~/fastfetch-build && \
+echo "FastFetch installed successfully! Type fastfetch."
